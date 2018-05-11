@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="">
+      <a href="index.html">SNAKE</a>
+
+    </div>
+    <button onclick="myFunction()">Click me for Time</button>
+<div id="time">
+<script>
+function myFunction() {
+    var x;
+    if (confirm("Display the time?") == true) {
+        addTime();
+    } else {
+      document.getElementById("time").innerHTML = "oh okay then."
+    }
+}
+var time = new Date();
+console.log(time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds());
+function updateTime() {
+  console.log("running");
+  time = new Date();
+  var hours = time.getHours();
+  var minutes = time.getMinutes();
+  var seconds = time.getSeconds();
+  if (seconds < 10) {
+    seconds = "0" + seconds;
+  } if (minutes < 10) {
+    minutes = "0" + minutes;
+  }
+  document.getElementById("time").innerHTML = (hours + ":" + minutes + ":" + seconds);
+}
+
+function addTime() {
+  setInterval(updateTime, 1000);
+}
+</script>
+</div>
+
+
+
+
+
+
+
+
+  </body>
+</html>
